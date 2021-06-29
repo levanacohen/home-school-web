@@ -1,0 +1,13 @@
+*+html {
+	overflow:auto;
+}
+.img-border, #form input, #form textarea {
+	behavior:url("../js/PIE.htc");
+	position:relative;
+}
+ul.menu li a {
+	letter-spacing:-3px;
+}
+.link-1, .link-2, h2 {
+	letter-spacing:-2px;
+}

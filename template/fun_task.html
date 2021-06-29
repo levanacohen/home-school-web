@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home School | Free Time</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" media="screen" href="css/reset.css">
+<link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+<link rel="stylesheet" type="text/css" media="screen" href="css/grid_12.css">
+<link rel="stylesheet" type="text/css" media="screen" href="css/demo.css">
+<link href='http://fonts.googleapis.com/css?family=Cabin+Sketch:400,700' rel='stylesheet' type='text/css'>
+<script src="js/jquery-1.7.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/uCarousel.js"></script>
+<script src="js/tms-0.4.1.js"></script>
+<script>
+$(document)
+    .ready(function () {
+    $('.gallery')
+        ._TMS({
+        show: 0,
+        pauseOnHover: true,
+        prevBu: '.prev',
+        nextBu: '.next',
+        playBu: '.play',
+        duration: 700,
+        preset: 'fade',
+        pagination: $('.img-pags')
+            .uCarousel({
+            show: 2,
+            shift: 0,
+            rows: 4
+        }),
+        pagNums: false,
+        slideshow: 7000,
+        numStatus: true,
+        banners: false,
+        waitBannerAnimation: false,
+        progressBar: false
+    })
+})
+</script>
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="css/ie.css">
+<![endif]-->
+</head>
+<body>
+<div class="main">
+  <!--==============================header=================================-->
+  <header>
+    <h1><a href="index.html"></a></h1>
+    <nav>
+      <div id="slide">
+        <div class="gallery">
+          <ul class="items">
+            <li><img src="images/gallery-big-1.jpg" alt=""></li>
+            <li><img src="images/gallery-big-2.jpg" alt=""></li>
+            <li><img src="images/gallery-big-3.jpg" alt=""></li>
+            <li><img src="images/gallery-big-4.jpg" alt=""></li>
+            <li><img src="images/gallery-big-5.jpg" alt=""></li>
+            <li><img src="images/gallery-big-6.jpg" alt=""></li>
+            <li><img src="images/gallery-big-7.jpg" alt=""></li>
+            <li><img src="images/gallery-big-8.jpg" alt=""></li>
+          </ul>
+        </div>
+        <a href="#" class="prev"></a><a href="#" class="next"></a> </div>
+      <ul class="menu">
+        <li><a href="index.html" class="clr-1">Home</a></li>
+        <li class="current"><a href="#" class="clr-2">Free Time</a></li>
+        <li><a href="schedule.html" class="clr-3">Schedule</a></li>
+        <li><a href="tasks.html" class="clr-4">Tasks</a></li>
+        <li><a href="contacts.html" class="clr-5">Contacts</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!--==============================content================================-->
+  <section id="content">
+    <div class="container_12" style="width: 980px;">
+      <div class="grid_8" style="width: 979px;">
+        <div class="block-1 top-5">
+          <div class="block-1-shadow">
+            <h2 class="clr-6 p4">Fun Tasks - {{student_class}} grade:</h2>
+            <div class="pag">
+              <div class="img-pags">
+                <div>
+                <ul style="width: 100%">
+                  {%if fun_tasks|length > 0%}
+                  {%for task in fun_tasks%}
+                  <li style="display: inline-block; padding-right: 10px"><a target="_blank" rel="noopener noreferrer" href={{task['link']}}>
+                    <span><img src="images/gallery-1.jpg" alt="" class="img-border"> <strong class="link_3" font-size: x-large;>{{task['descr']}}</strong></span></a>
+                  </li>
+                  {%endfor%}
+                  {%endif%}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+            <div class="pad-2"> <a href="#" class="link-2">Enjoy!</a> </div>
+          </div>
+        </div>
+        <!--==============================footer=================================-->
+        <footer>
+          <p>© home school</p>
+        </footer>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
