@@ -26,8 +26,8 @@ git clone https://github.com/levanacohen/home-school-web.git
 # Navigate to the project directory
 cd home-school-web
 
-# Run the application (adjust based on the actual setup)
-python app.py
+# Run the application
+python se.py
 ```
 
 ---
